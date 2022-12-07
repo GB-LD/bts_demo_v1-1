@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "alpinejs": "^3.10.5",
+        "tailgrids": "^2.0.0",
         "tw-elements": "^1.0.0-alpha13"
     }
 }

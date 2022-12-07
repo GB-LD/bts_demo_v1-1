@@ -5,7 +5,7 @@ module.exports = {
     content: [
       "./assets/**/*.js",
       "./templates/**/*.html.twig",
-      "./src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js"
+      "./src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js",
     ]
   },
   theme: {
@@ -82,6 +82,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('tw-elements/dist/plugin')
+    require('tw-elements/dist/plugin'),
+    require("tailgrids/plugin")
   ],
 }

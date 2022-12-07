@@ -28,6 +28,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "alpinejs": "^3.10.5",
         "tw-elements": "^1.0.0-alpha13"
     }
 }

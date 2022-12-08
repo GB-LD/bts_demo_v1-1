@@ -78,6 +78,7 @@ module.exports = {
           800: '#ad5930',
         },
         'midnight': "#292248",
+        'bts-yellow': "#f0f051",
       },
     },
   },

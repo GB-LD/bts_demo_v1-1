@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formView 'form/_tailwindFormTheme.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block content %}
+
+    {% include 'commons/_nav.html.twig' with {
+        bgColor: "bg-bts-red-500"
+    } %}
+
+    <div class="flex flex-wrap w-full">
+        <div class="flex flex-col w-full md:w-1/2">
+            <div class="xl:w-9/12 mx-auto flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32">
+                <p class="text-3xl text-center mb-8">
+                    Connectez vous à Back To School.
+                </p>
+                {{ form_start(formView) }}
+                {{ form_errors(formView) }}
+
+                {#        {% if error %}#}
+                {#            <div class="">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+                {#        {% endif %}#}
+
+                {{ form_row(formView.email) }}
+                {{ form_row(formView.password) }}
+
+                <button type="button" class="mt-4 py-2 px-4 bg-bts-red-500 hover:bg-bts-red-400 focus:ring-bts-red-300 focus:ring-offset-bts-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
+                    Connexion
+                </button>
+
+
+                {{ form_end(formView) }}
+                <div class="pt-12 pb-12 text-center">
+                    <p>
+                        Vous n'avez pas encore de compte? Dans ce cas,
+                        <a href="#" class="font-semibold underline">
+                            Inscrivez-vous.
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/2 shadow-2xl">
+            <img class="hidden object-cover w-full h-screen md:block" src="{{ asset("build/images/school_4.jpg") }}"/>
+        </div>
+    </div>
+
+{% endblock %}
+

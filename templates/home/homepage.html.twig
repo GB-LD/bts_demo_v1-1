@@ -2,8 +2,10 @@
 
 {% block title %}Hello HomeController!{% endblock %}
 
-{% block body %}
-    {% include 'commons/_nav.html.twig' %}
+{% block content %}
+    {% include 'commons/_nav.html.twig' with {
+        bgColor: "bg-midnight"
+    } %}
     {% include 'home/about.html.twig' %}
     {% include 'home/features.html.twig' %}
     {% include 'commons/_footer.html.twig' %}

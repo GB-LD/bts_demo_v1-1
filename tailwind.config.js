@@ -79,11 +79,24 @@ module.exports = {
         },
         'midnight': "#292248",
         'bts-yellow': "#f0f051",
+        'bts-red': {
+          50: "#FAE8E5",
+          100: "#F5CCC7",
+          200: "#EB998F",
+          300: "#E16B5B",
+          400: "#D43A26",
+          500: "#9B2B1C",
+          600: "#7D2317",
+          700: "#5F1A11",
+          800: "#3C110B",
+          900: "#1E0805"
+        }
       },
     },
   },
   plugins: [
     require('tw-elements/dist/plugin'),
-    require("tailgrids/plugin")
+    require("tailgrids/plugin"),
+    require('@tailwindcss/forms'),
   ],
 }

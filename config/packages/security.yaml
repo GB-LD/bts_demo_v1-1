@@ -17,9 +17,7 @@ security:
             lazy: true
             provider: app_user_provider
             custom_authenticator: App\Security\LoginFormAuthenticator
-            logout:
-                path: /logout
-                target: /acceuil
+
 
     hide_user_not_found: false
 

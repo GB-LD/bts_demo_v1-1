@@ -2,7 +2,9 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use App\Entity\Product;
+use App\Entity\Subject;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -53,14 +55,37 @@ class AppFixtures extends Fixture
             $manager->persist($user);
         }
 
-        for ($u = 0 ; $u < 50; $u++) {
-            $product = new Product();
-            $product
-                ->setTitle($faker->productName)
-                ->setDescription($faker->text)
-                ->setSlug($this->slugger->slug($product->getTitle()));
+        $categories = ["Agendas et Calendriers", "Crayons", "Correction et taille-crayons", "Découpe", "Matériel de géométrie", "Colle et adhésif", "Ardoises", "Dessin et musique", "Cahiers", "Protège doc, chemise, trieurs", "classeurs", "Papiers", "Calculatrice"];
 
-            $manager->persist($product);
+        foreach ($categories as $categoryName){
+            $category = new Category();
+            $category
+                ->setName($categoryName)
+                ->setSlug($this->slugger->slug($category->getName()));
+
+            for ($u = 0 ; $u < mt_rand(15, 20); $u++) {
+                $product = new Product();
+                $product
+                    ->setTitle($faker->productName)
+                    ->setDescription($faker->text)
+                    ->setSlug($this->slugger->slug($product->getTitle()))
+                    ->setCategory($category);
+
+                $manager->persist($product);
+            }
+
+            $manager->persist($category);
+        }
+
+        $subjects = ["Français", "Mathématiques", "Histoire-géographie", "Enseignement moral et civique", "Langues vivantes", "Sciences de la vie et de la Terre", "Physique-chimie", "Technologie", "Arts plastiques", "Éducation musicale"];
+
+        foreach ($subjects as $subjectName) {
+            $subject = new Subject();
+            $subject
+                ->setName($subjectName)
+                ->setSlug($this->slugger->slug($subject->getName()));
+
+            $manager->persist($subject);
         }
 
         $manager->flush();

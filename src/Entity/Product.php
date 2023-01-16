@@ -3,9 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\HasLifecycleCallbacks]
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
 {
@@ -28,6 +30,10 @@ class Product
 
     #[ORM\ManyToOne(inversedBy: 'products')]
     private ?Subject $subject = null;
+
+    #[ORM\ManyToOne(inversedBy: 'products')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $author = null;
 
     public function getId(): ?int
     {
@@ -90,6 +96,29 @@ class Product
     public function setSubject(?Subject $subject): self
     {
         $this->subject = $subject;
+
+        return $this;
+    }
+
+    /**
+     * Initialisation du slug
+     */
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    public function initializedSlug()
+    {
+        $slugify = Slugify::create();
+        $this->slug = $slugify->slugify($this->title);
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

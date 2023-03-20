@@ -22,56 +22,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    /**
-     * @var string|null
-     * @Assert\Email()
-     * @Assert\NotBlank()
-     */
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
     #[ORM\Column]
     private array $roles = [];
 
-    /**
-     * @var string|null
-     * @Assert\NotBlank()
-     */
     #[ORM\Column]
     private ?string $password = null;
 
-    /**
-     * @var string|null
-     * @Assert\NotBlank()
-     */
     #[ORM\Column(length: 255)]
     private ?string $firstName = null;
 
-    /**
-     * @var string|null
-     * @Assert\NotBlank()
-     */
     #[ORM\Column(length: 255)]
     private ?string $lastName = null;
 
-    /**
-     * @var string|null
-     * @Assert\NotBlank()
-     */
     #[ORM\Column(length: 255)]
     private ?string $city = null;
 
-    /**
-     * @var string|null
-     * @Assert\NotBlank()
-     */
     #[ORM\Column(length: 255)]
     private ?string $posteCode = null;
 
-    /**
-     * @var string|null
-     * @Assert\NotBlank()
-     */
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 

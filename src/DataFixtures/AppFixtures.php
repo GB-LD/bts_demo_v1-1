@@ -86,8 +86,8 @@ class AppFixtures extends Fixture
         for ($u = 0 ; $u < 50; $u++) {
             $product = new Product();
             $product
-                ->setTitle($faker->productName)
-                ->setDescription($faker->text)
+                ->setTitle($faker->productName())
+                ->setDescription($faker->text())
                 ->setCategory($categoriesEntities[mt_rand(0, count($categoriesEntities) - 1)])
                 ->setSubject($subjectsEntities[mt_rand(0, count($subjectsEntities) - 1)])
                 ->setAuthor($authors[mt_rand(0, count($authors) - 1)]);

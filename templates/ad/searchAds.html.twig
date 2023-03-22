@@ -24,7 +24,7 @@
             x-data="setup()"
             x-init="$refs.loading.classList.add('hidden');"
             @resize.window="watchScreen()"
-            class="h-full mt-8"
+            class="h-full"
     >
         <div class="flex items-stretch min-h-screen antialiased text-gray-900 bg-gray-100">
             <!-- Loading screen -->
@@ -34,15 +34,6 @@
             >
                 Loading
             </div>
-
-            <!-- Sidebar -->
-            <div
-                    x-show="isSidebarOpen"
-                    class="fixed inset-0 z-10 bg-bts-green-200 lg:hidden"
-                    style="opacity: 0.5"
-                    aria-hidden="true"
-            ></div>
-
             <aside
                     x-show="isSidebarOpen"
                     x-transition:enter="transition-all transform duration-300 ease-in-out"

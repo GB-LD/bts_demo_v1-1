@@ -165,7 +165,6 @@ class AdController extends AbstractController
     public function showUserAds(ProductRepository $productRepository) : Response
     {
         $userId = $this->getUser()->getId();
-        dump($userId);
         $userProduct = $productRepository->findBy(['author' => $userId]);
         return $this->render("ad/userAds.html.twig", [
             'userProducts' => $userProduct

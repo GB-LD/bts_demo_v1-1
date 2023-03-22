@@ -43,7 +43,6 @@
                     x-transition:leave-start="translate-x-0 opacity-100"
                     x-transition:leave-end="-translate-x-full opacity-0"
                     x-ref="sidebar"
-                    @keydown.escape="window.innerWidth <= 1024 ? isSidebarOpen = false : ''"
                     tabindex="-1"
                     class="fixed top-0 bottom-0 z-10 flex flex-shrink-0 w-full md:w-3/6 lg:w-2/6 xl:w-1/5 overflow-hidden lg:static bg-neutral-50"
             >

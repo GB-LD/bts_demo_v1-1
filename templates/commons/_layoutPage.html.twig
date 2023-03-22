@@ -1,10 +1,10 @@
 <div>
-    <div class="lg:basis-full flex justify-center items-center py-16 8 px-4 md:px-16">
+    <div class="lg:basis-full flex justify-center items-center pt-8 md:py-16 8 px-4 md:px-16">
         {% if title is defined %}
             {% include title %}
         {% endif %}
     </div>
-    <div class="lg:flex lg:items-center md:container pb-16">
+    <div class="lg:flex lg:items-center md:container">
         <div class="py-2 lg:w-1/2 py-8 px-4 md:px-16 {{ order }}">
             <div class="relative">
                 <div
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="py-2 lg:w-1/2 py-8 px-4 md:px-16">
+        <div class="py-2 w-2/3 lg:w-1/2 py-8 px-4 md:px-16 mx-auto">
             <img src="{% if image is defined %}{{ image }}{% endif %}" alt="illustration">
         </div>
     </div>

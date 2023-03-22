@@ -6,7 +6,7 @@
         <h2 class="font-semibold text-sm mb-2">Description</h2>
         <p>{{ product.description }}</p>
     </li>
-    <li class="mb-4 border-b border-neutral-400 pb-4 flex justify-around">
+    <li class="mb-4 border-b border-neutral-400 pb-4 flex flex-col md:flex-row justify-around">
         {% include "components/_badge.html.twig" with {text: product.author.city, color: "bg-fuchsia-600"} %}
         {% include "components/_badge.html.twig" with {text: product.category.name, color: "bg-bts-yellow-600"} %}
         {% include "components/_badge.html.twig" with {text: product.subject.name, color: "bg-indigo-600"} %}

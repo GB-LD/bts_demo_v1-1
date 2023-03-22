@@ -38,7 +38,6 @@
             <!-- Sidebar -->
             <div
                     x-show="isSidebarOpen"
-                    @click="isSidebarOpen = false"
                     class="fixed inset-0 z-10 bg-bts-green-200 lg:hidden"
                     style="opacity: 0.5"
                     aria-hidden="true"
@@ -84,7 +83,6 @@
                     <!-- Categories filters -->
                     <div x-data="{ isActive: false, open: true}"
                             >
-                        <!-- active & hover classes 'bg-indigo-100 dark:bg-indigo-600' -->
                         <button
                                 @click="$event.preventDefault(); open = !open"
                                 class="flex justify-between w-full items-center p-2 text-gray-500 transition-colors rounded-md"
@@ -112,7 +110,6 @@
 
                         <!-- Subject filters -->
                         <div x-data="{ isActive: false, open: true}">
-                            <!-- active & hover classes 'bg-indigo-100 dark:bg-indigo-600' -->
                             <button
                                     @click="$event.preventDefault(); open = !open"
                                     class="flex justify-between w-full items-center p-2 text-gray-500 transition-colors rounded-md"

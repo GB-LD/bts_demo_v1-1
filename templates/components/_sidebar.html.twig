@@ -39,10 +39,9 @@
             <nav aria-label="Main" class="flex-1 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto">
                 <!-- Categories filters -->
                 <div x-data="{ isActive: false, open: false}">
-                    <!-- active & hover classes 'bg-indigo-100 dark:bg-indigo-600' -->
                     <button
                             @click="$event.preventDefault(); open = !open"
-                            class="flex justify-between w-full items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-bts-green-100"
+                            class="flex justify-between w-full items-center p-2 text-gray-500 transition-colors rounded-md hover:bg-bts-green-100"
                             :class="{'bg-green-100': isActive || open}"
                             aria-haspopup="true"
                             :aria-expanded="(open || isActive) ? 'true' : 'false'"
@@ -75,7 +74,7 @@
         <div class="fixed flex items-center space-x-4 top-5 right-10 lg:hidden z-50">
             <button
                     @click="isSidebarOpen = true; $nextTick(() => { $refs.sidebar.focus() })"
-                    class="p-1 text-indigo-400 transition-colors duration-200 rounded-md bg-indigo-50 hover:text-indigo-600 hover:bg-indigo-100 dark:hover:text-light dark:hover:bg-indigo-700 dark:bg-dark focus:outline-none focus:ring"
+                    class="p-1 text-indigo-400 transition-colors duration-200 rounded-md bg-indigo-50 hover:text-indigo-600 hover:bg-indigo-100 focus:outline-none focus:ring"
             >
                 <span class="sr-only">Toggle main manu</span>
                 <span aria-hidden="true">
